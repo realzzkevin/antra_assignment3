@@ -1,4 +1,3 @@
-// start from mymap
 Array.prototype.myMap = function (fn, thisArg) {
     const newArray = [];
     const len = this.length;
@@ -7,6 +6,7 @@ Array.prototype.myMap = function (fn, thisArg) {
     }
     return newArray;
 }
+
 
 Array.prototype.myFilter = function(fn, thisArg) {
     const newArray = [];
@@ -29,20 +29,3 @@ Array.prototype.myReduce = function(fn, initalValue){
     }
     return accumulator;
 }
-const test = [1,2,3,4,5,6];
-const test2 = {a : "this"};
-
-const result = test.myMap((el, index) => {
-    if(index > 3){
-        return el * index;
-    } else {
-        return 0;
-    }
-}, test2);
-
-const filterRes = test.myFilter( x =>  (x % 2 == 0));
-const reduceTest = test.myReduce( ((a,b,c) => {return a + b}));
-
-console.log(result);
-console.log(filterRes);
-console.log(reduceTest);
